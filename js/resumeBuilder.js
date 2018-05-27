@@ -1,16 +1,24 @@
 var bio = {
-    name: string
-    role: string
-    contacts: an object with
-          mobile: string
-          email: string 
-          github: string
-          twitter: string(optional)
-          location: string
-    welcomeMessage: string 
-    skills: array of strings
-    biopic: string url
-    display: function taking no parameters
+    name: 'Brandon Lothaire Atwell',
+    role: 'Diet Clerk, Food Service',
+    contacts: {
+        mobile: '555-555-5555',
+        email: 'batwell31@yahoo.com',
+        github: 'https://github.com/batwell31',
+        twitter: 'https://twitter.com/BranAtwell1987',
+        location: 'Pennsylvania, USA'
+    },
+    welcomeMessage: 'I am pleased to welcome you to my resume',
+    skills: [
+        'JavaScript', 'HTML', 'CSS', 'Responsive Web Design', 'Object-Oriented Programming',
+        'Web Development', 'Git', 'GitHub', 'Visual Studio', 'Chrome Developer Tools',
+        'jQuery', 'Node.js', 'Grunt.js', 'Gulp.js', 'SASS', 'Version Control', 'Problem Solving',
+        'Time Management'
+    ],
+    biopic: 'https://pbs.twimg.com/profile_images/896093782432784384/TqGJsnUT_400x400.jpg',
+    display: function () {
+        // TODO: do something
+    }
 };
 
 var education = {
