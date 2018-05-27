@@ -15,7 +15,7 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">contact</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
 var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
@@ -44,7 +44,7 @@ var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
+var HTMLschoolDegree = ' - %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
@@ -62,10 +62,10 @@ var googleMap = '<div id="map"></div>';
 /*
 The Internationalize Names challenge found in the lesson Flow Control from JavaScript Basics requires you to create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
-$(document).ready(function() {
-  $('button').click(function() {
+$(document).ready(function () {
+  $('button').click(function () {
     var $name = $('#name');
-    var iName = inName($name.text()) || function(){};
+    var iName = inName($name.text()) || function () { };
     $name.html(iName);
   });
 });
@@ -75,7 +75,7 @@ The next few lines about clicks are for the Collecting Click Locations quiz in t
 */
 var clickLocations = [];
 
-function logClicks(x,y) {
+function logClicks(x, y) {
   clickLocations.push(
     {
       x: x,
@@ -85,7 +85,7 @@ function logClicks(x,y) {
   console.log('x location: ' + x + '; y location: ' + y);
 }
 
-$(document).click(function(loc) {
+$(document).click(function (loc) {
   // your code goes here!
 });
 
@@ -133,7 +133,7 @@ function initializeMap() {
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    education.schools.forEach(function(school){
+    education.schools.forEach(function (school) {
       locations.push(school.location);
     });
 
@@ -141,7 +141,7 @@ function initializeMap() {
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    work.jobs.forEach(function(job){
+    work.jobs.forEach(function (job) {
       locations.push(job.location);
     });
 
@@ -176,7 +176,7 @@ function initializeMap() {
     });
 
     // hmmmm, I wonder what this is about...
-    google.maps.event.addListener(marker, 'click', function() {
+    google.maps.event.addListener(marker, 'click', function () {
       // your code goes here!
     });
 
@@ -210,7 +210,7 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
 
     // Iterates through the array of locations, creates a search object for each location
-      locations.forEach(function(place){
+    locations.forEach(function (place) {
       // the search request object
       var request = {
         query: place
@@ -239,11 +239,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
-  //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+window.addEventListener('resize', function (e) {
+  // Make sure the map bounds get updated on page resize
+  map.fitBounds(mapBounds);
+});

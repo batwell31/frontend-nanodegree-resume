@@ -10,26 +10,21 @@ var bio = {
         email: 'batwell31@yahoo.com',
         github: 'https://github.com/batwell31',
         twitter: 'https://twitter.com/BranAtwell1987',
-        location: 'USA'
+        location: 'United States of America'
     },
     welcomeMessage: 'I am pleased to welcome you to my resume',
-    skills: [
-        'JavaScript', 'HTML', 'CSS', 'Responsive Web Design', 'Object-Oriented Programming',
-        'Web Development', 'Git', 'GitHub', 'Visual Studio', 'Chrome Developer Tools',
-        'jQuery', 'Node.js', 'Grunt.js', 'Gulp.js', 'SASS', 'Version Control', 'Problem Solving',
-        'Time Management'
-    ],
+    skills: ['JavaScript', 'HTML', 'CSS', 'Responsive Web Design', 'Object-Oriented Programming', 'bootstrap', 'Git', 'GitHub', 'Visual Studio', 'Chrome Developer Tools', 'jQuery', 'Node.js', 'Grunt.js', 'Gulp.js', 'SASS', 'Version Control', 'Problem Solving', 'Time Management'],
     biopic: 'https://pbs.twimg.com/profile_images/896093782432784384/TqGJsnUT_400x400.jpg'
 };
 
 var education = {
     schools: [{
-        name: 'Grove City Area High School',
-        location: 'Grove City, PA',
+        name: 'High School',
+        location: 'United States of America',
         degree: 'High School Diploma',
-        majors: ['n/a'],
+        majors: [''],
         dates: '2001-2005',
-        url: 'https://www.grovecity.k12.pa.us/domain/47'
+        url: ''
     }],
     onlineCourses: [{
         title: 'Front-End Web Developer Nanodegree',
@@ -61,14 +56,14 @@ var work = {
     jobs: [{
         employer: 'AVI FRESH, INC.',
         title: 'Diet Clerk',
-        location: 'Grove City, PA',
+        location: 'United States of America',
         dates: 'Aug 2005 - Present',
         description: 'Answer phone calls to handle patients dietary requests.  Work with computers to handle meal orders by doctors.  Experience handling upset patients and resolving the situation.  Work a trayline to prepare, and deliver patients meals.'
     },
     {
         employer: 'Commercial Appliance Contracts',
         title: 'Shop Assistant',
-        location: 'Grove City, PA',
+        location: 'United States of America',
         dates: 'June 2004 - August 2004',
         description: 'Assembled stainless steel equipment for commerical kitchens.  Performed various maintenance tasks.  Worked at customer location to assemble products'
     }]
@@ -79,139 +74,176 @@ var projects = {
         title: 'Cat Clicker Premium Pro Project',
         dates: 'April 2018 - April 2018',
         description: 'This project was provided to me by Udacity. It is wrote with OOP (Object-Oriented Programing). I used the MVO(Model / View / Octopus) layout in the JavaScript to keep the code organized.The web application is fully responsive as well.',
-        images: ['https://batwell31.github.io/Cat-Clicker-Premium-Pro/img/briar-rose.jpg', 'https://batwell31.github.io/Cat-Clicker-Premium-Pro/img/philip.jpg', 'https://batwell31.github.io/Cat-Clicker-Premium-Pro/img/harmony.jpg']
+        // images can go in there
+        images: ['']
     },
     {
         title: 'Feed Reader Testing',
         dates: 'May 2018 – May 2018',
         description: 'This was the 4th project of my Front-End Web Developer Nanodegree program. It was given to me by Udacity.I had to fill in the tests, and make them work for the expected result. Udacity gave a lot of helpful TODO: Comments to help guide me with this.',
-        images: ['https://s3.amazonaws.com/poly-screenshots.angel.co/enhanced_screenshots/457663-original.png', 'https://camo.githubusercontent.com/f3eea7c1e593ec73e1a1281fa6e3c99d0c778f74/687474703a2f2f692e696d6775722e636f6d2f7335456c30574c2e706e67']
+        // images can go in there
+        images: ['']
     },
     {
         title: 'Classic Arcade Game Clone',
         dates: 'Apr 2018 – Apr 2018',
         description: 'This is the third project completed through Udacity.  It is a Classic Arcade Game Clone was provided to me as one of my projects in the Front-End Web Developer Nanodegree by Udacity.  Its a modern variation of Frogger the classic arcade game, developed with HTML 5, Canvas Element, and Object Oriented JavaScript.',
-        images: ['https://raw.githubusercontent.com/batwell31/frontend-nanodegree-arcade-game/master/images/Key.png', 'https://raw.githubusercontent.com/batwell31/frontend-nanodegree-arcade-game/master/images/char-boy.png', 'https://raw.githubusercontent.com/batwell31/frontend-nanodegree-arcade-game/master/images/Star.png']
+        // images can go in there
+        images: ['']
     },
     {
         title: 'Memory Game',
         dates: 'Apr 2018 – Apr 2018',
         description: 'This was my second project I completed through Udacity.  A simple matching game where you search to find all 8 matches!',
-        images: ['https://raw.githubusercontent.com/batwell31/fend-project-memory-game/master/img/geometry2.png']
+        // images can go in there
+        images: ['']
     },
     {
         title: 'Portfolio Project',
         dates: 'Mar 2018 – Apr 2018',
         description: 'This was my first project provided to me by Udacity.  It is a portfolio site to display the projects I have completed',
-        images: ['https://raw.githubusercontent.com/batwell31/Project-Portfolio/master/img/dog-350_small.jpg', 'https://raw.githubusercontent.com/batwell31/Project-Portfolio/master/img/html-350_small.jpg', 'https://raw.githubusercontent.com/batwell31/Project-Portfolio/master/img/elephant-350_small.jpg']
+        // images can go in there
+        images: ['']
     }]
 };
 
 var octopus = {
-    
+
+    display: function() {
+        bioView.display();
+        educationView.display();
+        workView.display();
+        projectsView.display();
+        mapView.display();
+    }
 };
 
 var bioView = {
     
-    init: function() {
-        // store pointers to our DOM elements for easy access later
-        this.header = $("#header");
-        this.topBottomContacts = $("#topContacts, #footerContacts");
-        this.twitterDiv = $("#twitterDiv");
-        this.skills = $("#skills");
-    },
-    
-    display: function() {       
-        
-        // header info - name, title, image
-        this.header.prepend(HTMLheaderRole.replace(DATA, bio.role));
-        this.header.prepend(HTMLheaderName.replace(DATA, bio.name));
-        this.header.append(HTMLbioPic.replace(DATA, bio.biopic));
+    display: function () {
+        var formattedName = HTMLheaderName.replace(DATA, bio.name);
+        var formattedRole = HTMLheaderRole.replace(DATA, bio.role);
 
-        // replaced the above 'if' statement with 'for' loop for skills to iterate through all of them and append them:
-        this.header.append(HTMLskillsStart);
-        for (var i = 0; i < bio.skills.length; i++) {
-            this.skills.append(HTMLskills.replace(DATA, bio.skills[i]));
+        var formattedMobile = HTMLmobile.replace(DATA, bio.contacts.mobile);
+        var formattedEmail = HTMLemail.replace(DATA, bio.contacts.email);
+        var formattedGithub = HTMLgithub.replace(DATA, bio.contacts.github);
+        var formattedTwitter = HTMLtwitter.replace(DATA, bio.contacts.twitter);
+        var formattedLocation = HTMLlocation.replace(DATA, bio.contacts.location);
 
+        var formattedBioPic = HTMLbioPic.replace(DATA, bio.biopic);
+        var formattedWelcomeMessage = HTMLwelcomeMsg.replace(DATA, bio.welcomeMessage);
+
+        $('#header').prepend(formattedName + formattedRole);
+        $('#topContacts, #footerContacts').append(formattedMobile + formattedEmail +
+            formattedGithub + formattedTwitter + formattedLocation);
+        $('#header').append(formattedBioPic);
+        $('#header').append(formattedWelcomeMessage);
+
+        if (bio.skills.length > 0) {
+            $('#header').append(HTMLskillsStart);
+
+            for (var i = 0, len = bio.skills.length; i < len; i++) {
+                var formattedSkills = HTMLskills.replace(DATA, bio.skills[i]);
+
+                $('#skills').append(formattedSkills);
+            }
         }
-
-        this.topBottomContacts.append(HTMLmobile.replace(DATA, bio.contacts.mobile));
-        this.topBottomContacts.append(HTMLemail.replace(DATA, bio.contacts.email));
-        this.topBottomContacts.append(HTMLtwitter.replace(DATA, bio.contacts.twitter));
-        this.topBottomContacts.append(HTMLgithub.replace(DATA, bio.contacts.github));
-        this.topBottomContacts.append(HTMLlocation.replace(DATA, bio.contacts.location));
-
-        this.header.append(HTMLwelcomeMsg.replace(DATA, bio.welcomeMessage));
-
-        this.twitterDiv.append(twitterFeed);
     }
 };
 
 var educationView = {
     
-    init: function() {
-        // store pointers to our DOM elements for easy access later
-        this.education = $("#education");
-        this.educationEntryLast = $(".education-entry:last");
-    },
-    
     display: function() {
 
-        for (var i = 0; i < education.schools.length; i++) {
-            
+        if (education.schools.length > 0 || education.onlineCourses.length > 0) {
+            for (var i = 0, iLen = education.schools.length; i < iLen; i++) {
+                var formattedName = HTMLschoolName.replace(DATA, education.schools[i].name);
+                var formattedDegree = HTMLschoolDegree.replace(DATA, education.schools[i].degree);
+                var formattedSchoolDates = HTMLschoolDates.replace(DATA, education.schools[i].dates);
+                var formattedLocation = HTMLschoolLocation.replace(DATA, education.schools[i].location);
+                var formattedNameDegree = formattedName + formattedDegree;
 
-            this.education.append(HTMLschoolStart);
+                $('#education').append(HTMLschoolStart);
+                $('.education-entry:last').append(formattedNameDegree);
+                $('.education-entry:last').append(formattedSchoolDates);
+                $('.education-entry:last').append(formattedLocation);
 
-            var formattedName = HTMLschoolName.replace(DATA, education.schools[i].name);
-            var formattedDegree = HTMLschoolDegree.replace().replace(DATA, education.schools[i].degree);
-            this.educationEntryLast.append(formattedName + formattedDegree);
+                for (var j = 0, jLen = education.schools[i].majors.length; j < jLen; j++) {
+                    var formattedMajor = HTMLschoolMajor.replace(DATA, education.schools[i].majors[j]);
 
-            this.educationEntryLast.append(HTMLschoolDates.replace(DATA, education.schools[i].dates));
-            this.educationEntryLast.append(HTMLschoolLocation.replace(DATA, education.schools[i].location));
-            this.educationEntryLast.append(HTMLschoolMajor.replace(DATA, education.schools[i].majors));
-            this.educationEntryLast.append(HTMLonlineURL.replace(DATA, education.schools[i].url));
-        }
+                    $('.education-entry:last').append(formattedMajor);
+                }
+            }
 
-        education.append(HTMLonlineClasses);
-        for (var k = 0; k < education.onlineCourses.length; k++) {
-            this.education.append(HTMLschoolStart);
+            $('#education').append(HTMLonlineClasses);
 
-            var formattedTitle = HTMLonlineTitle.replace(DATA, education.onlineCourses[k].title);
-            var formattedSchool = HTMLonlineSchool.replace(DATA, education.onlineCourses[k].school);
+            for (var k = 0, len = education.onlineCourses.length; k < len; k++) {
+                var formattedTitle = HTMLonlineTitle.replace(DATA, education.onlineCourses[k].title).replace('#', education.onlineCourses[k].url);
+                var formattedSchool = HTMLonlineSchool.replace(DATA, education.onlineCourses[k].school);
+                var formattedOnlineDates = HTMLonlineDates.replace(DATA, education.onlineCourses[k].dates);
+                var formattedUrl = HTMLonlineURL.replace(DATA, education.onlineCourses[k].url);
+                var formattedTitleSchool = formattedTitle + formattedSchool;
 
-            this.educationEntryLast.append(formattedTitle + formattedSchool);
-
-            this.educationEntryLast.append(HTMLonlineDates.replace(DATA, education.onlineCourses[k].dates));
-            this.educationEntryLast.append(HTMLonlineURL.replace(DATA, education.onlineCourses[k].url));        
+                $('#education').append(HTMLschoolStart);
+                $('.education-entry:last').append(formattedTitleSchool);
+                $('.education-entry:last').append(formattedOnlineDates);
+                $('.education-entry:last').append(formattedUrl);
+            }
         }
     }
 };
 
 var workView = {
     
-    // store pointers to our DOM elements for easy access later
-    init: function() {
-        this.workExperience = $("workExperience");
-        this.workEntryLast = $(".work-entry:last");
-    },
-
     display: function() {
 
-        for (var i = 0; i < work.jobs.length; i++) {
-            // created new div for work experience
-            this.workExperience.append(HTMLworkStart);
+        if(work.jobs.length > 0) {
+            for (var i = 0, len = work.jobs.length; i < len; i++) {
+                var formattedEmployer = HTMLworkEmployer.replace(DATA, work.jobs[i].employer);
+                var formattedTitle = HTMLworkTitle.replace(DATA, work.jobs[i].title);
+                var formattedDates = HTMLworkDates.replace(DATA, work.jobs[i].dates);
+                var formattedLocation = HTMLworkLocation.replace(DATA, work.jobs[i].location);
+                var formattedDescription = HTMLworkDescription.replace(DATA, work.jobs[i].description);
+                var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-            var formattedEmployer = HTMLworkEmployer.replace(DATA, work.jobs[i].employer);
-            var formattedTitle = HTMLworkTitle.replace(DATA, work.jobs[i].title);
-
-            this.workEntryLast.append(formattedEmployer + formattedTitle);
-
-            this.workEntryLast.append(HTMLworkDates.replace(DATA, work.jobs[i].dates));
-            this.workEntryLast.append(HTMLworkDescription.replace(DATA, work.jobs[i].description));
+                $('#workExperience').append(HTMLworkStart);
+                $('.work-entry:last').append(formattedEmployerTitle);
+                $('.work-entry:last').append(formattedDates);
+                $('.work-entry:last').append(formattedLocation);
+                $('.work-entry:last').append(formattedDescription);
+            }
         }
-    }    
+    }
 };
 
 var projectsView = {
 
+    display: function () {
+        if (projects.projects.length > 0) {
+            for (var i = 0, iLen = projects.projects.length; i < iLen; i++) {
+                var formattedTitle = HTMLprojectTitle.replace(DATA, projects.projects[i].title);
+                var formattedDates = HTMLprojectDates.replace(DATA, projects.projects[i].dates);
+                var formattedDescription = HTMLprojectDescription.replace(DATA, projects.projects[i].description);
+
+                $('#projects').append(HTMLprojectStart);
+                $('.project-entry:last').append(formattedTitle);
+                $('.project-entry:last').append(formattedDates);
+                $('.project-entry:last').append(formattedDescription);
+
+                for (var j = 0, jLen = projects.projects[i].images.length; j < jLen; j++) {
+                    var formattedImage = HTMLprojectImage.replace(DATA, projects.projects[i].images[j]);
+
+                    $('.project-entry:last').append(formattedImage);
+                }
+            }
+        }
+    }
 };
+
+var mapView = {
+    display: function() {
+        $('#mapDiv').append(googleMap);
+    }
+};
+// make it go!
+octopus.display();
