@@ -79,7 +79,38 @@ var work = {
     }
 };
 
-
 var projects = {
-
+    projects: [{
+        title: 'Cat Clicker Premium Pro Project',
+        dates: 'April 2018 - April 2018',
+        description: 'This project was provided to me by Udacity. It is wrote with OOP (Object-Oriented Programing). I used the MVO(Model / View / Octopus) layout in the JavaScript to keep the code organized.The web application is fully responsive as well.',
+        images: ['https://batwell31.github.io/Cat-Clicker-Premium-Pro/img/briar-rose.jpg', 'https://batwell31.github.io/Cat-Clicker-Premium-Pro/img/philip.jpg', 'https://batwell31.github.io/Cat-Clicker-Premium-Pro/img/harmony.jpg']
+    },
+    {
+        title: 'Feed Reader Testing',
+        dates: 'May 2018 – May 2018',
+        description: 'This was the 4th project of my Front-End Web Developer Nanodegree program. It was given to me by Udacity.I had to fill in the tests, and make them work for the expected result. Udacity gave a lot of helpful TODO: Comments to help guide me with this.',
+        images: ['https://s3.amazonaws.com/poly-screenshots.angel.co/enhanced_screenshots/457663-original.png', 'https://camo.githubusercontent.com/f3eea7c1e593ec73e1a1281fa6e3c99d0c778f74/687474703a2f2f692e696d6775722e636f6d2f7335456c30574c2e706e67']
+    },
+    {
+        title: 'Classic Arcade Game Clone',
+        dates: 'Apr 2018 – Apr 2018',
+        description: 'This is the third project completed through Udacity.  It is a Classic Arcade Game Clone was provided to me as one of my projects in the Front-End Web Developer Nanodegree by Udacity.  Its a modern variation of Frogger the classic arcade game, developed with HTML 5, Canvas Element, and Object Oriented JavaScript.',
+        images: ['https://raw.githubusercontent.com/batwell31/frontend-nanodegree-arcade-game/master/images/Key.png', 'https://raw.githubusercontent.com/batwell31/frontend-nanodegree-arcade-game/master/images/char-boy.png', 'https://raw.githubusercontent.com/batwell31/frontend-nanodegree-arcade-game/master/images/Star.png']
+    },
+    {
+        title: 'Memory Game',
+        dates: 'Apr 2018 – Apr 2018',
+        description: 'This was my second project I completed through Udacity.  A simple matching game where you search to find all 8 matches!',
+        images: ['https://raw.githubusercontent.com/batwell31/fend-project-memory-game/master/img/geometry2.png']
+    },
+    {
+        title: 'Portfolio Project',
+        dates: 'Mar 2018 – Apr 2018',
+        description: 'This was my first project provided to me by Udacity.  It is a portfolio site to display the projects I have completed',
+        images: ['https://raw.githubusercontent.com/batwell31/Project-Portfolio/master/img/dog-350_small.jpg', 'https://raw.githubusercontent.com/batwell31/Project-Portfolio/master/img/html-350_small.jpg', 'https://raw.githubusercontent.com/batwell31/Project-Portfolio/master/img/elephant-350_small.jpg']
+    }],
+    display: function () {
+        // TODO: do something
+    }
 };
