@@ -16,27 +16,49 @@ var bio = {
         'Time Management'
     ],
     biopic: 'https://pbs.twimg.com/profile_images/896093782432784384/TqGJsnUT_400x400.jpg',
-    display: function () {
+    display: function() {
         // TODO: do something
     }
 };
 
 var education = {
-    schools: array of objects with
-         name: string
-         location: string
-         degree: string
-         majors: array of strings
-         dates: string(works with a hyphen between them)
-    url: string(optional)
-    onlineCourses: array of objects with
-         title: string
-         school: string
-         dates: string(works with a hyphen between them)
-    url: string
-    display: function taking no parameters
-
+    schools: [{
+        name: 'Grove City Area High School',
+        location: 'Grove City, PA',
+        degree: 'High School Diploma',
+        majors: ['n/a'],
+        dates: '2001-2005',
+        url: 'https://www.grovecity.k12.pa.us/domain/47'
+    }],
+    onlineCourses: [{
+        title: 'Front-End Web Developer Nanodegree',
+        school: 'Udacity',
+        dates: 'March 2018 - Present',
+        url: 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
+    },
+    {
+        title: 'Intro to jQuery',
+        school: 'Udacity',
+        dates: 'May 2018',
+        url: 'https://classroom.udacity.com/courses/ud245'
+    },
+    {
+        title: 'Responsive Images',
+        school: 'Udacity',
+        dates: 'March 2018',
+        url: 'https://classroom.udacity.com/courses/ud882'
+    },
+    {
+        title: 'How to Use Git and GitHub',
+        school: 'Udacity',
+        dates: 'April 2018',
+        url: 'https://classroom.udacity.com/courses/ud775'
+    }],
+    display: function () {
+        // TODO: do something
+    }
 };
+
 
 var work = {
     projects: array of objects with
