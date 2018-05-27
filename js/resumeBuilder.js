@@ -8,7 +8,7 @@ var bio = {
         email: 'batwell31@yahoo.com',
         github: 'https://github.com/batwell31',
         twitter: 'https://twitter.com/BranAtwell1987',
-        location: 'Pennsylvania, USA'
+        location: 'USA'
     },
     welcomeMessage: 'I am pleased to welcome you to my resume',
     skills: [
