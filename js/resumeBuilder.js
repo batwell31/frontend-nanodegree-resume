@@ -1,5 +1,7 @@
 var DATA = '%data%';
 
+// ===== MODEL ===== //
+
 var bio = {
     name: 'Brandon Lothaire Atwell',
     role: 'Diet Clerk, Food Service',
@@ -17,10 +19,7 @@ var bio = {
         'jQuery', 'Node.js', 'Grunt.js', 'Gulp.js', 'SASS', 'Version Control', 'Problem Solving',
         'Time Management'
     ],
-    biopic: 'https://pbs.twimg.com/profile_images/896093782432784384/TqGJsnUT_400x400.jpg',
-    display: function() {
-        // TODO: do something
-    }
+    biopic: 'https://pbs.twimg.com/profile_images/896093782432784384/TqGJsnUT_400x400.jpg'
 };
 
 var education = {
@@ -111,8 +110,54 @@ var projects = {
         dates: 'Mar 2018 – Apr 2018',
         description: 'This was my first project provided to me by Udacity.  It is a portfolio site to display the projects I have completed',
         images: ['https://raw.githubusercontent.com/batwell31/Project-Portfolio/master/img/dog-350_small.jpg', 'https://raw.githubusercontent.com/batwell31/Project-Portfolio/master/img/html-350_small.jpg', 'https://raw.githubusercontent.com/batwell31/Project-Portfolio/master/img/elephant-350_small.jpg']
-    }],
-    display: function () {
-        // TODO: do something
+    }]
+};
+
+var octopus = {
+    
+};
+
+var bioView = {
+    
+    display: function() {
+        
+        // variables that target DOM elements for easy access.
+        var header = $("#header");
+        var topBottomContacts = $("#topContacts, #footerContacts");
+        var twitterDiv = $("#twitterDiv");
+
+        // header info - name, title, image
+        header.prepend(HTMLheaderRole.replace(DATA, bio.role));
+        header.prepend(HTMLheaderName.replace(DATA, bio.name));
+        header.append(HTMLbioPic.replace(DATA, bio.biopic));
+
+        // replaced the above 'if' statement with 'for' loop for skills to iterate through all of them and append them:
+        header.append(HTMLskillsStart);
+        for (var i = 0; i < bio.skills.length; i++) {
+            $("#skills").append(HTMLskills.replace(DATA, bio.skills[i]));
+
+        }
+
+        topBottomContacts.append(HTMLmobile.replace(DATA, bio.contacts.mobile));
+        topBottomContacts.append(HTMLemail.replace(DATA, bio.contacts.email));
+        topBottomContacts.append(HTMLtwitter.replace(DATA, bio.contacts.twitter));
+        topBottomContacts.append(HTMLgithub.replace(DATA, bio.contacts.github));
+        topBottomContacts.append(HTMLlocation.replace(DATA, bio.contacts.location));
+
+        header.append(HTMLwelcomeMsg.replace(DATA, bio.welcomeMessage));
+
+        twitterDiv.append(twitterFeed);
     }
+};
+
+var educationView = {
+
+};
+
+var workView = {
+
+};
+
+var projectsView = {
+
 };
