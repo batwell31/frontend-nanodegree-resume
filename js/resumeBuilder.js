@@ -1,3 +1,5 @@
+var DATA = '%data%';
+
 var bio = {
     name: 'Brandon Lothaire Atwell',
     role: 'Diet Clerk, Food Service',
