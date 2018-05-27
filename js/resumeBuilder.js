@@ -151,7 +151,37 @@ var bioView = {
 };
 
 var educationView = {
+    
+    display: function() {
 
+        for (var i = 0; i < education.schools.length; i++) {
+            var education = $("#education");
+            var educationEntryLast = $(".education-entry:last");
+
+            education.append(HTMLschoolStart);
+
+            var formattedName = HTMLschoolName.replace(DATA, education.schools[i].name);
+            var formattedDegree = HTMLschoolDegree.replace().replace(DATA, education.schools[i].degree);
+            educationEntryLast.append(formattedName + formattedDegree);
+
+            educationEntryLast.append(HTMLschoolDates.replace(DATA, education.schools[i].dates));
+            educationEntryLast.append(HTMLschoolLocation.replace(DATA, education.schools[i].location));
+            educationEntryLast.append(HTMLschoolMajor.replace(DATA, education.schools[i].majors));
+            educationEntryLast.append(HTMLonlineURL.replace(DATA, education.schools[i].url));
+        }
+
+        education.append(HTMLonlineClasses);
+        for (var k = 0; k < education.onlineCourses.length; k++) {
+            education.append(HTMLschoolStart);
+
+            var formattedTitle = HTMLonlineTitle.replace(DATA, education.onlineCourses[k].title);
+            var formattedSchool = HTMLonlineSchool.replace(DATA, education.onlineCourses[k].school);
+            educationEntryLast.append(formattedTitle + formattedSchool);
+
+            educationEntryLast.append(HTMLonlineDates.replace(DATA, education.onlineCourses[k].dates));
+            educationEntryLast.append(HTMLonlineURL.replace(DATA, education.onlineCourses[k].url));        
+        }
+    }
 };
 
 var workView = {
