@@ -59,15 +59,26 @@ var education = {
     }
 };
 
-
 var work = {
-    projects: array of objects with
-          title: string 
-          dates: string(works with a hyphen between them)
-    description: string
-          images: array with string urls
-    display: function taking no parameters
+    jobs: [{
+        employer: 'AVI FRESH, INC.',
+        title: 'Diet Clerk',
+        location: 'Grove City, PA',
+        dates: 'Aug 2005 - Present',
+        description: 'Answer phone calls to handle patients dietary requests.  Work with computers to handle meal orders by doctors.  Experience handling upset patients and resolving the situation.  Work a trayline to prepare, and deliver patients meals.'
+    },
+    {
+        employer: 'Commercial Appliance Contracts',
+        title: 'Shop Assistant',
+        location: 'Grove City, PA',
+        dates: 'June 2004 - August 2004',
+        description: 'Assembled stainless steel equipment for commerical kitchens.  Performed various maintenance tasks.  Worked at customer location to assemble products'
+    }],
+    display: function () {
+        // TODO: do something
+    }
 };
+
 
 var projects = {
 
