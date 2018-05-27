@@ -54,10 +54,7 @@ var education = {
         school: 'Udacity',
         dates: 'April 2018',
         url: 'https://classroom.udacity.com/courses/ud775'
-    }],
-    display: function () {
-        // TODO: do something
-    }
+    }]
 };
 
 var work = {
@@ -74,10 +71,7 @@ var work = {
         location: 'Grove City, PA',
         dates: 'June 2004 - August 2004',
         description: 'Assembled stainless steel equipment for commerical kitchens.  Performed various maintenance tasks.  Worked at customer location to assemble products'
-    }],
-    display: function () {
-        // TODO: do something
-    }
+    }]
 };
 
 var projects = {
@@ -119,73 +113,103 @@ var octopus = {
 
 var bioView = {
     
-    display: function() {
+    init: function() {
+        // store pointers to our DOM elements for easy access later
+        this.header = $("#header");
+        this.topBottomContacts = $("#topContacts, #footerContacts");
+        this.twitterDiv = $("#twitterDiv");
+        this.skills = $("#skills");
+    },
+    
+    display: function() {       
         
-        // variables that target DOM elements for easy access.
-        var header = $("#header");
-        var topBottomContacts = $("#topContacts, #footerContacts");
-        var twitterDiv = $("#twitterDiv");
-
         // header info - name, title, image
-        header.prepend(HTMLheaderRole.replace(DATA, bio.role));
-        header.prepend(HTMLheaderName.replace(DATA, bio.name));
-        header.append(HTMLbioPic.replace(DATA, bio.biopic));
+        this.header.prepend(HTMLheaderRole.replace(DATA, bio.role));
+        this.header.prepend(HTMLheaderName.replace(DATA, bio.name));
+        this.header.append(HTMLbioPic.replace(DATA, bio.biopic));
 
         // replaced the above 'if' statement with 'for' loop for skills to iterate through all of them and append them:
-        header.append(HTMLskillsStart);
+        this.header.append(HTMLskillsStart);
         for (var i = 0; i < bio.skills.length; i++) {
-            $("#skills").append(HTMLskills.replace(DATA, bio.skills[i]));
+            this.skills.append(HTMLskills.replace(DATA, bio.skills[i]));
 
         }
 
-        topBottomContacts.append(HTMLmobile.replace(DATA, bio.contacts.mobile));
-        topBottomContacts.append(HTMLemail.replace(DATA, bio.contacts.email));
-        topBottomContacts.append(HTMLtwitter.replace(DATA, bio.contacts.twitter));
-        topBottomContacts.append(HTMLgithub.replace(DATA, bio.contacts.github));
-        topBottomContacts.append(HTMLlocation.replace(DATA, bio.contacts.location));
+        this.topBottomContacts.append(HTMLmobile.replace(DATA, bio.contacts.mobile));
+        this.topBottomContacts.append(HTMLemail.replace(DATA, bio.contacts.email));
+        this.topBottomContacts.append(HTMLtwitter.replace(DATA, bio.contacts.twitter));
+        this.topBottomContacts.append(HTMLgithub.replace(DATA, bio.contacts.github));
+        this.topBottomContacts.append(HTMLlocation.replace(DATA, bio.contacts.location));
 
-        header.append(HTMLwelcomeMsg.replace(DATA, bio.welcomeMessage));
+        this.header.append(HTMLwelcomeMsg.replace(DATA, bio.welcomeMessage));
 
-        twitterDiv.append(twitterFeed);
+        this.twitterDiv.append(twitterFeed);
     }
 };
 
 var educationView = {
     
+    init: function() {
+        // store pointers to our DOM elements for easy access later
+        this.education = $("#education");
+        this.educationEntryLast = $(".education-entry:last");
+    },
+    
     display: function() {
 
         for (var i = 0; i < education.schools.length; i++) {
-            var education = $("#education");
-            var educationEntryLast = $(".education-entry:last");
+            
 
-            education.append(HTMLschoolStart);
+            this.education.append(HTMLschoolStart);
 
             var formattedName = HTMLschoolName.replace(DATA, education.schools[i].name);
             var formattedDegree = HTMLschoolDegree.replace().replace(DATA, education.schools[i].degree);
-            educationEntryLast.append(formattedName + formattedDegree);
+            this.educationEntryLast.append(formattedName + formattedDegree);
 
-            educationEntryLast.append(HTMLschoolDates.replace(DATA, education.schools[i].dates));
-            educationEntryLast.append(HTMLschoolLocation.replace(DATA, education.schools[i].location));
-            educationEntryLast.append(HTMLschoolMajor.replace(DATA, education.schools[i].majors));
-            educationEntryLast.append(HTMLonlineURL.replace(DATA, education.schools[i].url));
+            this.educationEntryLast.append(HTMLschoolDates.replace(DATA, education.schools[i].dates));
+            this.educationEntryLast.append(HTMLschoolLocation.replace(DATA, education.schools[i].location));
+            this.educationEntryLast.append(HTMLschoolMajor.replace(DATA, education.schools[i].majors));
+            this.educationEntryLast.append(HTMLonlineURL.replace(DATA, education.schools[i].url));
         }
 
         education.append(HTMLonlineClasses);
         for (var k = 0; k < education.onlineCourses.length; k++) {
-            education.append(HTMLschoolStart);
+            this.education.append(HTMLschoolStart);
 
             var formattedTitle = HTMLonlineTitle.replace(DATA, education.onlineCourses[k].title);
             var formattedSchool = HTMLonlineSchool.replace(DATA, education.onlineCourses[k].school);
-            educationEntryLast.append(formattedTitle + formattedSchool);
 
-            educationEntryLast.append(HTMLonlineDates.replace(DATA, education.onlineCourses[k].dates));
-            educationEntryLast.append(HTMLonlineURL.replace(DATA, education.onlineCourses[k].url));        
+            this.educationEntryLast.append(formattedTitle + formattedSchool);
+
+            this.educationEntryLast.append(HTMLonlineDates.replace(DATA, education.onlineCourses[k].dates));
+            this.educationEntryLast.append(HTMLonlineURL.replace(DATA, education.onlineCourses[k].url));        
         }
     }
 };
 
 var workView = {
+    
+    // store pointers to our DOM elements for easy access later
+    init: function() {
+        this.workExperience = $("workExperience");
+        this.workEntryLast = $(".work-entry:last");
+    },
 
+    display: function() {
+
+        for (var i = 0; i < work.jobs.length; i++) {
+            // created new div for work experience
+            this.workExperience.append(HTMLworkStart);
+
+            var formattedEmployer = HTMLworkEmployer.replace(DATA, work.jobs[i].employer);
+            var formattedTitle = HTMLworkTitle.replace(DATA, work.jobs[i].title);
+
+            this.workEntryLast.append(formattedEmployer + formattedTitle);
+
+            this.workEntryLast.append(HTMLworkDates.replace(DATA, work.jobs[i].dates));
+            this.workEntryLast.append(HTMLworkDescription.replace(DATA, work.jobs[i].description));
+        }
+    }    
 };
 
 var projectsView = {
