@@ -10,7 +10,7 @@ var bio = {
         email: 'batwell31@yahoo.com',
         github: 'https://github.com/batwell31',
         twitter: 'https://twitter.com/BranAtwell1987',
-        location: 'United States of America'
+        location: 'Sharon, PA, USA'
     },
     welcomeMessage: 'I am pleased to welcome you to my resume',
     skills: ['JavaScript', 'HTML', 'CSS', 'Responsive Web Design', 'Object-Oriented Programming', 'bootstrap', 'Git', 'GitHub', 'Visual Studio', 'Chrome Developer Tools', 'jQuery', 'Node.js', 'Grunt.js', 'Gulp.js', 'SASS', 'Version Control', 'Problem Solving', 'Time Management'],
@@ -20,7 +20,7 @@ var bio = {
 var education = {
     schools: [{
         name: 'High School',
-        location: 'United States of America',
+        location: 'Grove City, PA, USA',
         degree: 'High School Diploma',
         majors: [''],
         dates: '2001-2005',
@@ -56,14 +56,14 @@ var work = {
     jobs: [{
         employer: 'AVI FRESH, INC.',
         title: 'Diet Clerk',
-        location: 'United States of America',
+        location: 'Grove City, PA, USA',
         dates: 'Aug 2005 - Present',
         description: 'Answer phone calls to handle patients dietary requests.  Work with computers to handle meal orders by doctors.  Experience handling upset patients and resolving the situation.  Work a trayline to prepare, and deliver patients meals.'
     },
     {
         employer: 'Commercial Appliance Contracts',
         title: 'Shop Assistant',
-        location: 'United States of America',
+        location: 'Grove City, PA, USA',
         dates: 'June 2004 - August 2004',
         description: 'Assembled stainless steel equipment for commerical kitchens.  Performed various maintenance tasks.  Worked at customer location to assemble products'
     }]
